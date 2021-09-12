@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="./assets/images/logoweb.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="./assets/css/screen.css">
+  
+  <title>LiveChat</title>
+</head>
+<body>
+  <div class="app">
+    <div class="app-header">
+      <div class="header-logo">
+        <img src="./assets/images/logo.png" alt="">
+      </div>
+    </div>
+    <div class="app-body">
+      <div class="login-wrap">
+        <div class="login-html">
+          <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">JOIN NOW</label>
+          <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">CREATE ROOM</label>
+          <div class="login-form">
+            <form class="sign-in-htm" id="join-room-form" >
+              <div class="group">
+                <label for="user" class="label">Username</label>
+                <input id="user" type="text" class="input">
+              </div>
+              <div class="group">
+                <label for="id" class="label">ID room</label>
+                <input id="id-room" name="roomID" type="text" class="input" data-type="id-room">
+              </div>
+              <div class="group">
+                <label for="pass" class="label">Password</label>
+                <input id="pass" type="password" class="input" data-type="password">
+              </div>
+              <div class="group">
+                <input id="check" type="checkbox" class="check" checked>
+                <label for="check"><span class="icon"></span> Keep me Signed in</label>
+              </div>
+              <div class="group">
+                <input type="submit" class="button" value="Join now">
+              </div>
+              <div class="hr"></div>
+            </form>
+            <form class="sign-up-htm" id="create-room-form" >
+              <div class="group">
+                <label for="user" class="label">Name room</label>
+                <input id="user" type="text" class="input">
+              </div>
+              <div class="group">
+                <label for="pass" class="label">ID Room</label>
+                <input name="roomID" type="text" class="input">
+              </div>
+              <div class="group">
+                <label for="pass" class="label">Password</label>
+                <input id="pass" type="password" class="input" data-type="password">
+              </div>
+              <div class="group">
+                <label for="pass" class="label">Repeat Password</label>
+                <input  type="password" class="input" data-type="password">
+              </div>
+              <div class="group">
+                <input type="submit" class="button" value="CTEATE">
+              </div>
+              <div class="hr"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="./assets/js/index.js"></script>
+</body>
+</html>

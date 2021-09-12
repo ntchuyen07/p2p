@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meet - saw-hyhk-cbx</title>
+  <link rel="shortcut icon" type="image/x-icon" href="./assets/images/logoweb.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body>
+  <div class="app">
+    <p id="notification" hidden></p>
+    <div class="app-body">
+      <div class="body-users">
+        
+        <div class="body-user">
+          <div class="user-micro">
+            <img src="./assets/images/user-micro.svg" alt="">
+          </div>
+          <div class="user-name">
+            Phong Hồ Thanh
+          </div>
+          <div class="user-avatar">
+            <img src="https://lh3.googleusercontent.com/a/AATXAJzlZMxBvUqTHxaDwcLtgPf25Z47OcZO-zudoqt-=s192-c-mo" alt="">
+          </div>
+          <div class="user-control">
+            <div class="user-control-block">
+              <div class="user-control-item active">
+                <i class="fas fa-thumbtack"></i>
+                <div class="user-control-item-label">
+                  <span>Pin Phong Hồ Thanh to your main screen</span>
+                </div>
+              </div>
+              <div class="user-control-item">
+                <img src="./assets/images/micro-off-blur.svg" alt="">
+                <div class="user-control-item-label">
+                  <span>You can't unmute someone else</span>
+                </div>
+              </div>
+              <div class="user-control-item active">
+                <i class="fas fa-minus-circle"></i>
+                <div class="user-control-item-label">
+                  <span>Remove Phong Hồ Thanh from the call</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <video id="remote-video"></video>
+        </div>
+        <div class="body-user">
+          <div class="user-micro">
+            <img src="./assets/images/user-micro.svg" alt="">
+          </div>
+          <div class="user-name">
+            You
+          </div>
+          <div class="user-avatar">
+            <img src="https://lh3.googleusercontent.com/a/AATXAJxKI9kG7COmDjvrHmOfM9CR3q-51QsnalnPdpBF=s192-c-mo" alt="">
+          </div>
+          <div class="user-control">
+            <div class="user-control-block">
+              <div class="user-control-item active">
+                <i class="fas fa-thumbtack"></i>
+                <div class="user-control-item-label">
+                  <span>Pin yourself to your main screen</span>
+                </div>
+              </div>
+              <div class="user-control-item active">
+                <i class="fas fa-qrcode"></i>
+                <div class="user-control-item-label">
+                  <span>Remove this tile</span>
+                </div>
+              </div>
+              <div class="user-control-item active">
+                <i class="fas fa-compress-alt"></i>
+                <div class="user-control-item-label">
+                  <span>Minimize</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <video id="local-video"></video>
+        </div>
+        <div class="body-user" id="screen-video-block" >
+          <video id="screen-video"></video>
+        </div>
+        
+      </div>
+      <div class="body-interaction close">
+        <div class="body-interaction-heading">
+          <div class="body-interaction-title">
+            Activities
+          </div>
+          <div class="body-interaction-close-btn">
+            <i class="fas fa-times"></i>
+          </div>
+        </div>
+        <div class="body-interaction-content body-interaction-info" data-id="0" >
+          <div class="interaction-info-label">
+            Joining info
+          </div>
+          <div class="interaction-info-link">
+            https://meet.google.com/saw-hyhk-cbx
+          </div>
+          <div class="interaction-info-copy-link-btn">
+            <i class="far fa-copy"></i>
+            <span>Copy joining info</span>
+          </div>
+        </div>
+
+        <div class="body-interaction-content body-interaction-people" data-id="1" >
+          <div class="interaction-people-search-block">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search for people" >
+          </div>
+
+          <div class="interaction-people-block">
+            <h2>In call</h2>
+            <ul class="interaction-people-list">
+              <li class="interaction-people-item">
+                <div>
+                  <img src="https://lh3.googleusercontent.com/a/AATXAJxKI9kG7COmDjvrHmOfM9CR3q-51QsnalnPdpBF=s192-c-mo" alt="" class="interaction-people-avatar">
+                  <span class="interaction-people-name">
+                    Phong Hồ (You)
+                  </span>
+                </div>
+                <div>
+                  <img class="interaction-people-micro"  src="./assets/images/micro-off-dark.svg" alt="">
+                  <i class="fas fa-thumbtack"></i>
+                </div>
+              </li>
+              <li class="interaction-people-item">
+                <div>
+                  <img src="https://lh3.googleusercontent.com/a/AATXAJzlZMxBvUqTHxaDwcLtgPf25Z47OcZO-zudoqt-=s192-c-mo" alt="" class="interaction-people-avatar">
+                  <span class="interaction-people-name">
+                    Phong Hồ Thanh
+                  </span>
+                </div>
+                <div>
+                  <img class="interaction-people-micro"  src="./assets/images/micro-off-dark.svg" alt="">
+                  <i class="fas fa-thumbtack"></i>
+                </div>
+              </li>
+              <li class="interaction-people-item">
+                <div>
+                  <img src="https://lh3.googleusercontent.com/a/AATXAJzlZMxBvUqTHxaDwcLtgPf25Z47OcZO-zudoqt-=s192-c-mo" alt="" class="interaction-people-avatar">
+                  <span class="interaction-people-name">
+                    Phong Hồ Thanh
+                  </span>
+                </div>
+                <div>
+                  <img class="interaction-people-micro"  src="./assets/images/micro-off-dark.svg" alt="">
+                  <i class="fas fa-thumbtack"></i>
+                </div>
+              </li>
+              <li class="interaction-people-item">
+                <div>
+                  <img src="https://lh3.googleusercontent.com/a/AATXAJzlZMxBvUqTHxaDwcLtgPf25Z47OcZO-zudoqt-=s192-c-mo" alt="" class="interaction-people-avatar">
+                  <span class="interaction-people-name">
+                    Phong Hồ Thanh
+                  </span>
+                </div>
+                <div>
+                  <img class="interaction-people-micro"  src="./assets/images/micro-off-dark.svg" alt="">
+                  <i class="fas fa-thumbtack"></i>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="body-interaction-content body-interaction-chatting">
+          <div class="interaction-chatting-label">
+            Messages can only be seen by people in the call and are deleted when the call ends.
+          </div>
+          <ul class="interaction-chatting-list-messages">
+            <li class="interaction-chatting-message-item">
+              <div class="chatting-message-info">
+                <div class="chatting-message-username">You</div>
+                <div class="chatting-message-time">8:27 PM</div>
+              </div>
+              <div class="chatting-message-content">
+                Hi
+              </div>
+            </li>
+            <li class="interaction-chatting-message-item">
+              <div class="chatting-message-info">
+                <div class="chatting-message-username">Phong Hồ Thanh</div>
+                <div class="chatting-message-time">8:30 PM</div>
+              </div>
+              <div class="chatting-message-content">
+                Hello
+              </div>
+            </li>
+            <li class="interaction-chatting-message-item">
+              <div class="chatting-message-info">
+                <div class="chatting-message-username">You</div>
+                <div class="chatting-message-time">8:33 PM</div>
+              </div>
+              <div class="chatting-message-content">
+                Good evening
+              </div>
+            </li>
+          </ul>
+          <div class="interaction-chatting-input">
+            <form action="">
+              <div style="display: flex;">
+                <div style="width: 80%;">
+                  <input type="text" class="message-input" placeholder="Send a message to everyone">
+                </div>
+                <div style="width: 20%;">
+                  <button class="btn-send-message" type="submit"><img src="./assets/images/send-message.svg" alt=""></button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="body-interaction-content body-interaction-activity">
+          <ul class="interaction-activity-list">
+            <li class="interaction-activity-item">
+              <img src="https://www.gstatic.com/meet/google-meet-icons_whiteboard-icon_44ebb90da0e177ad2a47be47dccc81ae.svg" alt="">
+              <div class="interaction-activity-item-info">
+                <span>Whiteboarding</span>
+                <span>Collaboratively brainstorm and sketch ideas</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="app-footer">
+      <div class="room-info">
+          <b>7:35 PM</b>  |  <b>Phòng họp 19IT1</b>
+      </div>
+      <div class="room-control">
+        <div class="room-control-item active" id="micro-control" >
+          <img src="./assets/images/micro-off.svg" alt="micro">
+          <div class="room-control-item-label">
+            <span>Turn on micro (Ctrl + D)</span>
+          </div>
+        </div>
+        <div class="room-control-item active" id="camera-control" >
+          <img src="./assets/images/camera-off.svg" alt="camera">
+          <div class="room-control-item-label">
+            <span>Turn on camera (Ctrl + E)</span>
+          </div>
+        </div>
+        <div class="room-control-item">
+          <i class="far fa-closed-captioning"></i>
+          <div class="room-control-item-label">
+            <span>Turn on captions</span>
+          </div>
+        </div>
+        <div class="room-control-item">
+          <img src="./assets/images/present-white.svg" alt="present">
+          <div class="room-control-item-label">
+            <span>Present now</span>
+          </div>
+          <div class="sub-menu">
+            <div>Present</div>
+            <ul class="sub-menu-list">
+              <li class="sub-menu-item">
+                <img src="./assets/images/entire-screen.svg" alt="">
+                <div class="sub-menu-item-text" onclick="startScreenShare()">Your entire screen</div>
+              </li>
+              <li class="sub-menu-item">
+                <i class="far fa-window-restore"></i>
+                <div class="sub-menu-item-text">A window</div>
+              </li>
+              <li class="sub-menu-item">
+                <i class="far fa-window-maximize"></i>
+                <div class="sub-menu-item-text">
+                  <div>A tab</div>
+                  <div>Best for video and animation</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="room-control-item">
+          <i class="fas fa-ellipsis-v"></i>
+          <div class="room-control-item-label">
+            <span>More options</span>
+          </div>
+          <div class="sub-menu">
+            <ul class="sub-menu-list">
+              <li class="sub-menu-item">
+                <i class="fas fa-pen"></i>
+                <div class="sub-menu-item-text">
+                  <div>Whiteboard</div>
+                  <div>Open a Jam</div>
+                </div>
+              </li>
+              <li class="sub-menu-item">
+                <i class="fas fa-shapes"></i>
+                <div class="sub-menu-item-text">Change layout</div>
+              </li>
+              <li class="sub-menu-item">
+                <i class="fas fa-expand"></i>
+                <div class="sub-menu-item-text">
+                  Full screen
+                </div>
+              </li>
+              <li class="sub-menu-item">
+                <img src="./assets/images/background-black.svg" alt="present">
+                <div class="sub-menu-item-text">
+                  Change background
+                </div>
+              </li>
+              <li class="sub-menu-item">
+                <i class="far fa-closed-captioning"></i>
+                <div class="sub-menu-item-text">
+                  <div>Captions</div>
+                  <div>Off</div>
+                </div>
+              </li>
+              <li class="divider"></li>
+              <li class="sub-menu-item">
+                <img src="./assets/images/report-problem.svg" alt="present">
+                <div class="sub-menu-item-text">
+                  Report a problem
+                </div>
+              </li>
+              <li class="sub-menu-item">
+                <img src="./assets/images/report-abuse.svg" alt="present">
+                <div class="sub-menu-item-text">
+                  Report abuse
+                </div>
+              </li>
+              <li class="sub-menu-item">
+                <img src="./assets/images/troubleshooting.svg" alt="present">
+                <div class="sub-menu-item-text">
+                  Troubleshooting & help 
+                </div>
+              </li>
+              <li class="sub-menu-item">
+                <i class="fas fa-cog"></i>                
+                <div class="sub-menu-item-text">
+                  Settings
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="room-control-item room-control-end-call active">
+          <img src="./assets/images/end-call.svg">
+          <div class="room-control-item-label">
+            <span>Leave call</span>
+          </div>
+        </div>
+      </div>
+      <div class="room-interact-control">
+        <div class="room-interact-control-item">
+          <i class="fas fa-info-circle"></i>
+        </div>
+        <div class="room-interact-control-item">
+          <i class="fas fa-user-friends"></i>
+        </div>
+        <div class="room-interact-control-item">
+          <i class="fas fa-comment-alt"></i>
+        </div>
+        <div class="room-interact-control-item">
+          <i class="fas fa-shapes"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/screen.js"></script>
+</body>
+</html>
