@@ -1,4 +1,4 @@
-const host = 'http://127.0.0.1:5500/ScreenSharing';
+const host = 'http://127.0.0.1:5500';
 const createRoomForm = document.querySelector('#create-room-form');
 const joinRoomForm = document.querySelector('#join-room-form');
 

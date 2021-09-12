@@ -8,12 +8,12 @@ var screenStream;
 var peer = null;
 var currentPeer = null
 var screenSharing = false
-var isCameraOn = false;
-var myStream;
+var isCameraOn = true;
 const urlParams = new URLSearchParams(window.location.search);
 const roomInfo = JSON.parse(localStorage.getItem('room_info'));
 const screenVideoElement = document.querySelector('#screen-video');
 const screenVideoBlock = document.querySelector('#screen-video-block');
+const localVideo = document.querySelector('#local-video');
 
 // document.querySelector() -> sẽ lấy 1 element
 // document.querySelectorAll() -> lấy tất cả element thoả điều kiện
@@ -40,13 +40,17 @@ function createRoom() {
     peer = new Peer(room_id)
     peer.on('open', (id) => {
         console.log("Peer Connected with ID: ", id)
-        getUserMedia({ video: true, audio: true }, (stream) => {
-            local_stream = stream;
-            myStream = stream;
-            setLocalStream(local_stream)
-        }, (err) => {
-            console.log(err)
+        navigator.mediaDevices.getUserMedia({
+            audio: true,
+            video: true
         })
+        .then(stream => {
+            local_stream = stream;
+            setLocalStream(local_stream);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
     })
     peer.on('call', (call) => {
         call.answer(local_stream);
@@ -59,13 +63,13 @@ function createRoom() {
 }
 
 function setLocalStream(stream) {
-    let video = document.getElementById("local-video");
-    video.srcObject = stream;
-    video.muted = true;
-    video.play();
+    localVideo.srcObject = stream;
+    localVideo.muted = true;
+    localVideo.play();
 }
+
 function setRemoteStream(stream) {
-    let video = document.getElementById("remote-video");
+    let video = document.querySelector('#remote-video');
     video.srcObject = stream;
     video.play()
         .then(_ => {
@@ -80,15 +84,6 @@ function setScreenStream(stream) {
     video.play();
 }
 
-function notify(msg) {
-    let notification = document.getElementById("notification")
-    notification.innerHTML = msg
-    notification.hidden = false
-    setTimeout(() => {
-        notification.hidden = true;
-    }, 3000)
-}
-
 function joinRoom() {
     console.log("Joining Room")
     let room = urlParams.get('id');
@@ -100,9 +95,8 @@ function joinRoom() {
     peer = new Peer()
     peer.on('open', (id) => {
         console.log("Connected with Id: " + id)
-        getUserMedia({ video: true, audio: true }, (stream) => {
+        navigator.getUserMedia({ video: true, audio: true }, (stream) => {
             local_stream = stream;
-            myStream = stream;
             setLocalStream(local_stream)
             let call = peer.call(room_id, stream)
             call.on('stream', (stream) => {
@@ -154,38 +148,36 @@ function stopScreenSharing() {
     });
     screenSharing = false;
     screenVideoBlock.style.display = 'none';
-    turnOnCamera();
 }
 
 
 function turnOffCamera() {
-    let video = document.getElementById("local-video");
-    const mediaStream = video.srcObject;
+    local_stream.getVideoTracks()[0].enabled = false;
+    localVideo.src = '';
+    localVideo.style.display = 'none';
+    // local_stream.getTracks().forEach(track => track.stop())
+}
 
-    // Through the MediaStream, you can get the MediaStreamTracks with getTracks():
-    mediaStream.getTracks().forEach(function (track) {
-        track.stop();
-    });
-
-    let videoTrack = mediaStream.getVideoTracks()[0];
+function turnOnCamera() {
+    localVideo.style.display = 'block';    
+    navigator.mediaDevices.getUserMedia({
+        audio: true,
+        video: true
+    })
+    .then(stream => {
+        local_stream = stream;
+        setLocalStream(local_stream);
+        let videoTrack = local_stream.getVideoTracks()[0];
         if (peer) {
-            console.log(mediaStream);
             let sender = currentPeer.peerConnection.getSenders().find(function (s) {
                 return s.track.kind == videoTrack.kind;
             })
             sender.replaceTrack(videoTrack)
         }
-  
-}
-
-function turnOnCamera() {
-    getUserMedia({ video: true, audio: true }, (stream) => {
-        local_stream = stream;
-        myStream = stream;
-        setLocalStream(local_stream)
-    }, (err) => {
-        console.log(err)
     })
+    .catch((err) => {
+        console.log(err);
+    });
 }
 
 // thêm sự kiện cho 1 element
