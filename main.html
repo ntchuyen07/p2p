@@ -19,75 +19,79 @@
     <div class="app-body">
       <div class="body-users">
         
-        <div class="body-user">
-          <div class="user-micro">
-            <img src="./assets/images/user-micro.svg" alt="">
-          </div>
-          <div class="user-name">
-            Phong Hồ Thanh
-          </div>
-          <div class="user-avatar">
-            <img src="https://lh3.googleusercontent.com/a/AATXAJzlZMxBvUqTHxaDwcLtgPf25Z47OcZO-zudoqt-=s192-c-mo" alt="">
-          </div>
-          <div class="user-control">
-            <div class="user-control-block">
-              <div class="user-control-item active">
-                <i class="fas fa-thumbtack"></i>
-                <div class="user-control-item-label">
-                  <span>Pin Phong Hồ Thanh to your main screen</span>
+        <div>
+          <div class="body-user" style="z-index: 1000;" >
+            <video id="local-video"></video>
+            <div class="user-micro">
+              <img src="./assets/images/user-micro.svg" alt="">
+            </div>
+            <div class="user-name">
+              You
+            </div>
+            <!--<div class="user-avatar">
+              <img src="https://lh3.googleusercontent.com/a/AATXAJxKI9kG7COmDjvrHmOfM9CR3q-51QsnalnPdpBF=s192-c-mo" alt="">
+            </div>-->
+            <div class="user-control">
+              <div class="user-control-block">
+                <div class="user-control-item active">
+                  <i class="fas fa-thumbtack"></i>
+                  <div class="user-control-item-label">
+                    <span>Pin yourself to your main screen</span>
+                  </div>
                 </div>
-              </div>
-              <div class="user-control-item">
-                <img src="./assets/images/micro-off-blur.svg" alt="">
-                <div class="user-control-item-label">
-                  <span>You can't unmute someone else</span>
+                <div class="user-control-item active">
+                  <i class="fas fa-qrcode"></i>
+                  <div class="user-control-item-label">
+                    <span>Remove this tile</span>
+                  </div>
                 </div>
-              </div>
-              <div class="user-control-item active">
-                <i class="fas fa-minus-circle"></i>
-                <div class="user-control-item-label">
-                  <span>Remove Phong Hồ Thanh from the call</span>
+                <div class="user-control-item active">
+                  <i class="fas fa-compress-alt"></i>
+                  <div class="user-control-item-label">
+                    <span>Minimize</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <video preload="none" id="remote-video"></video>
-        </div>
-        <div class="body-user">
-          <div class="user-micro">
-            <img src="./assets/images/user-micro.svg" alt="">
-          </div>
-          <div class="user-name">
-            You
-          </div>
-          <div class="user-avatar">
-            <img src="https://lh3.googleusercontent.com/a/AATXAJxKI9kG7COmDjvrHmOfM9CR3q-51QsnalnPdpBF=s192-c-mo" alt="">
-          </div>
-          <div class="user-control">
-            <div class="user-control-block">
-              <div class="user-control-item active">
-                <i class="fas fa-thumbtack"></i>
-                <div class="user-control-item-label">
-                  <span>Pin yourself to your main screen</span>
-                </div>
+          <div class="body-user">
+            <video preload="none" id="remote-video" ></video>
+            <div>
+              <!--<div class="user-micro">
+                <img src="./assets/images/user-micro.svg" alt="">
               </div>
-              <div class="user-control-item active">
-                <i class="fas fa-qrcode"></i>
-                <div class="user-control-item-label">
-                  <span>Remove this tile</span>
-                </div>
+              <div class="user-name">
               </div>
-              <div class="user-control-item active">
-                <i class="fas fa-compress-alt"></i>
-                <div class="user-control-item-label">
-                  <span>Minimize</span>
+              <div class="user-avatar">
+                <img src="https://lh3.googleusercontent.com/a/AATXAJzlZMxBvUqTHxaDwcLtgPf25Z47OcZO-zudoqt-=s192-c-mo" alt="">
+              </div>-->
+              <!--<div class="user-control">
+                <div class="user-control-block">
+                  <div class="user-control-item active">
+                    <i class="fas fa-thumbtack"></i>
+                    <div class="user-control-item-label">
+                      <span>Pin Huyền Nguyễn Thị Cẩm to your main screen</span>
+                    </div>
+                  </div>
+                  <div class="user-control-item">
+                    <img src="./assets/images/micro-off-blur.svg" alt="">
+                    <div class="user-control-item-label">
+                      <span>You can't unmute someone else</span>
+                    </div>
+                  </div>
+                  <div class="user-control-item active">
+                    <i class="fas fa-minus-circle"></i>
+                    <div class="user-control-item-label">
+                      <span>Remove Huyền Nguyễn Thị Cẩm from the call</span>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </div>-->
             </div>
           </div>
-          <video id="local-video"></video>
+          
         </div>
-        <div class="body-user" id="screen-video-block" >
+        <div class="body-user-remote" id="screen-video-block" >
           <video id="screen-video"></video>
         </div>
         
@@ -127,7 +131,7 @@
                 <div>
                   <img src="https://lh3.googleusercontent.com/a/AATXAJxKI9kG7COmDjvrHmOfM9CR3q-51QsnalnPdpBF=s192-c-mo" alt="" class="interaction-people-avatar">
                   <span class="interaction-people-name">
-                    Phong Hồ (You)
+                    Huyền Nguyễn Thị Cẩm (You)
                   </span>
                 </div>
                 <div>
@@ -139,7 +143,7 @@
                 <div>
                   <img src="https://lh3.googleusercontent.com/a/AATXAJzlZMxBvUqTHxaDwcLtgPf25Z47OcZO-zudoqt-=s192-c-mo" alt="" class="interaction-people-avatar">
                   <span class="interaction-people-name">
-                    Phong Hồ Thanh
+                    Huyền Nguyễn Thị Cẩm
                   </span>
                 </div>
                 <div>
@@ -151,7 +155,7 @@
                 <div>
                   <img src="https://lh3.googleusercontent.com/a/AATXAJzlZMxBvUqTHxaDwcLtgPf25Z47OcZO-zudoqt-=s192-c-mo" alt="" class="interaction-people-avatar">
                   <span class="interaction-people-name">
-                    Phong Hồ Thanh
+                    Huyền Nguyễn Thị Cẩm
                   </span>
                 </div>
                 <div>
@@ -163,7 +167,7 @@
                 <div>
                   <img src="https://lh3.googleusercontent.com/a/AATXAJzlZMxBvUqTHxaDwcLtgPf25Z47OcZO-zudoqt-=s192-c-mo" alt="" class="interaction-people-avatar">
                   <span class="interaction-people-name">
-                    Phong Hồ Thanh
+                    Huyền Nguyễn Thị Cẩm
                   </span>
                 </div>
                 <div>
@@ -248,8 +252,8 @@
             <span>Turn on micro (Ctrl + D)</span>
           </div>
         </div>
-        <div class="room-control-item active" id="camera-control" >
-          <img src="./assets/images/camera-off.svg" alt="camera">
+        <div class="room-control-item" id="camera-control" >
+          <img src="./assets/images/camera.svg" alt="camera">
           <div class="room-control-item-label">
             <span>Turn on camera (Ctrl + E)</span>
           </div>
