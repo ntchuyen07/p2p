@@ -77,14 +77,23 @@ body::selection {
 /* App body */
 
 .app-body {
-  margin-top: 55px;
+  /* margin-top: 55px; */
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .body-video-block {
   position: relative;
+}
+
+.img-banner {
+  width: 100%;
+  top: 0;
+} 
+.image-banner {
+  background:url(https://i.pinimg.com/564x/95/3c/16/953c16ffd70db06009f5ea71e1dc0cef.jpg) no-repeat center;
 }
 
 #local-video {
