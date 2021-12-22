@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="./assets/images/logoweb.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="./assets/css/screen.css">
+  <link href='https://fonts.googleapis.com/css?family=Amita' rel='stylesheet'>
+  
+  <title>CamHuyen-Chat</title>
+</head>
+<body>
+  <div class="container-fuild">
+      <div class="row">
+        <div class="col-md-4" style="height: 100vh; position: fixed;">
+            <div class="login-wrap">
+                <div class="login-html">
+                    <div class="bar-icon d-flex align-items-center justify-content-center">
+                        <i class="fas fa-bars"></i>
+                        <span class="language">ENG</span>
+                    </div>
+                    <div class="row" style="margin-top: 50%;">
+                        <div class="offset-md-9 col-md-3">
+                            <div class="tabs d-margin">
+                                <div>
+                                    <a class="tablinks active" href="#"> Join Room</a>
+                                </div>
+                                <div>
+                                    <a class="tablinks" href="#"> Create Room</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-copy">Copyright by CamHuyen</div>
+                </div>
+            </div>
+          </div>
+          <div class="offset-md-4 col-md-8">
+              <div class="row">
+                <div class="offset-md-8 col-md-4 t-margin" style="float: right;">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="name-mail-user">ntchuyen.19it1@vku.udn.vn</div>
+                            <div class="change-mail-user"><a href="#" class="link-mail-user">Switch Accounts</a></div>
+                        </div>
+                        <div class="col-md-2 d-flex align-items-center justify-content-center">
+                            <img src="./assets/images/avatar.jpg" alt="" class="img-avatar-mail">
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="row d-flex align-items-center justify-content-center t-margin-main">
+                  <div class="logo-web">
+                      <img class="logo-web-index" src="./assets/images/design.jpg" alt="">
+                  </div>
+              </div>
+              <div class="row d-flex align-items-center justify-content-center t-margin-main">
+                <div class="login-form">
+                    <div class="tab-content">
+                        <form class="tabcontent sign-in-htm" id="join-room-form" >
+                            <div class="group">
+                              <input id="user" name="username" type="text" class="input-form" placeholder="Username">
+                            </div>
+                            <div class="group">
+                              <input id="id-room" name="roomID" type="text" class="input-form" data-type="id-room" placeholder="Room ID">
+                            </div>
+                            <div class="group">
+                              <input id="pass" type="password" class="input-form" data-type="password" placeholder="Password">
+                            </div>
+                            <div class="group">
+                              <input id="check" type="checkbox" class="check" checked>
+                              <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                            </div>
+                            <div class="group">
+                              <input type="submit" class="button-join" value="Join">
+                            </div>
+                            <div class="hr"></div>
+                        </form>
+                        <form class="tabcontent sign-up-htm" id="create-room-form" >
+                          <div class="group">
+                            <input name="username" id="user" type="text" class="input-form" placeholder="Username">
+                          </div>
+                          <div class="group">
+                            <input name="roomID" type="text" class="input-form" placeholder="Room ID">
+                          </div>
+                          <div class="group">
+                            <input id="pass" type="password" class="input-form" data-type="password" placeholder="Password">
+                          </div>
+                          <div class="group">
+                            <input  type="password" class="input-form" data-type="password" placeholder="Repeat Password">
+                          </div>
+                          <div class="group">
+                            <input type="submit" class="button-join" value="CTEATE">
+                          </div>
+                          <div class="hr"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+          </div>
+      </div>
+  </div>
+  <script src="./assets/js/index.js"></script>
+  <script src="./assets/js/elements.js"></script>
+</body>
+</html>

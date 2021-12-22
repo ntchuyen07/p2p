@@ -1,27 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meet - saw-hyhk-cbx</title>
   <link rel="shortcut icon" type="image/x-icon" href="./assets/images/logoweb.png" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./assets/css/main.css">
 </head>
+
 <body>
   <div class="app">
     <p id="notification" hidden></p>
     <div class="app-body">
       <div class="body-users">
-        
+
         <div>
-          <div class="body-user" style="z-index: 1000;" >
-            <video id="local-video"></video>
+          <div class="body-user" style="z-index: 1000;">
+            <video id="local-video" muted></video>
             <div class="user-micro">
               <img src="./assets/images/user-micro.svg" alt="">
             </div>
@@ -54,11 +69,11 @@
               </div>
             </div>
           </div>
-          <div class="body-user">
-            <video preload="none" id="remote-video" ></video>
+          <div class="body-user" style="background: #F3F4F7 !important;">
+            <video preload="none" id="remote-video"></video>
             <div>
               <div class="user-name" id="remote-name">
-              
+
               </div>
               <!--<div class="user-micro">
                 <img src="./assets/images/user-micro.svg" alt="">
@@ -91,12 +106,12 @@
               </div>-->
             </div>
           </div>
-          
+
         </div>
-        <div class="body-user-remote" id="screen-video-block" >
+        <div class="body-user-remote" id="screen-video-block">
           <video id="screen-video"></video>
         </div>
-        
+
       </div>
       <div class="body-interaction close">
         <div class="body-interaction-heading">
@@ -107,7 +122,7 @@
             <i class="fas fa-times"></i>
           </div>
         </div>
-        <div class="body-interaction-content body-interaction-info" data-id="0" >
+        <div class="body-interaction-content body-interaction-info" data-id="0">
           <div class="interaction-info-label">
             Joining info
           </div>
@@ -120,18 +135,19 @@
           </div>
         </div>
 
-        <div class="body-interaction-content body-interaction-people" data-id="1" >
+        <div class="body-interaction-content body-interaction-people" data-id="1">
           <div class="interaction-people-search-block">
             <i class="fas fa-search"></i>
-            <input type="text" placeholder="Search for people" >
+            <input type="text" placeholder="Search for people">
           </div>
 
           <div class="interaction-people-block">
             <h2>In call</h2>
             <ul class="interaction-people-list">
-              <li class="interaction-people-item">
+              <!-- <li class="interaction-people-item">
                 <div>
                   <img src="https://lh3.googleusercontent.com/a/AATXAJxKI9kG7COmDjvrHmOfM9CR3q-51QsnalnPdpBF=s192-c-mo" alt="" class="interaction-people-avatar">
+                  <div class="interaction-user-avatar" ><span>H</span></div>
                   <span class="interaction-people-name">
                     Huyền Nguyễn Thị Cẩm (You)
                   </span>
@@ -140,43 +156,8 @@
                   <img class="interaction-people-micro"  src="./assets/images/micro-off-dark.svg" alt="">
                   <i class="fas fa-thumbtack"></i>
                 </div>
-              </li>
-              <li class="interaction-people-item">
-                <div>
-                  <img src="https://lh3.googleusercontent.com/a/AATXAJzlZMxBvUqTHxaDwcLtgPf25Z47OcZO-zudoqt-=s192-c-mo" alt="" class="interaction-people-avatar">
-                  <span class="interaction-people-name">
-                    Huyền Nguyễn Thị Cẩm
-                  </span>
-                </div>
-                <div>
-                  <img class="interaction-people-micro"  src="./assets/images/micro-off-dark.svg" alt="">
-                  <i class="fas fa-thumbtack"></i>
-                </div>
-              </li>
-              <li class="interaction-people-item">
-                <div>
-                  <img src="https://lh3.googleusercontent.com/a/AATXAJzlZMxBvUqTHxaDwcLtgPf25Z47OcZO-zudoqt-=s192-c-mo" alt="" class="interaction-people-avatar">
-                  <span class="interaction-people-name">
-                    Huyền Nguyễn Thị Cẩm
-                  </span>
-                </div>
-                <div>
-                  <img class="interaction-people-micro"  src="./assets/images/micro-off-dark.svg" alt="">
-                  <i class="fas fa-thumbtack"></i>
-                </div>
-              </li>
-              <li class="interaction-people-item">
-                <div>
-                  <img src="https://lh3.googleusercontent.com/a/AATXAJzlZMxBvUqTHxaDwcLtgPf25Z47OcZO-zudoqt-=s192-c-mo" alt="" class="interaction-people-avatar">
-                  <span class="interaction-people-name">
-                    Huyền Nguyễn Thị Cẩm
-                  </span>
-                </div>
-                <div>
-                  <img class="interaction-people-micro"  src="./assets/images/micro-off-dark.svg" alt="">
-                  <i class="fas fa-thumbtack"></i>
-                </div>
-              </li>
+              </li> -->
+
             </ul>
           </div>
         </div>
@@ -185,27 +166,40 @@
           <div class="interaction-chatting-label">
             Messages can only be seen by people in the call and are deleted when the call ends.
           </div>
-          <ul class="interaction-chatting-list-messages" id="message-list-id" >
-            
+          <ul class="interaction-chatting-list-messages" id="message-list-id">
+
           </ul>
           <div class="interaction-chatting-input">
-            <form action="" id="message-form-id">
-              <div style="display: flex;">
-                <div style="width: 80%;">
-                  <input type="text" name="message" class="message-input" placeholder="Send a message to everyone">
+            <div style="display: flex;">
+              <form style="width: 15%;" id="file-form-id" >
+                <div  >
+                  <input type="file" name="files" id="file-chatting" style="display: none;">
+                  <label for="file-chatting" class="label-img">
+                    <img class="file" src="./assets/images/ph_paperclip-light.svg" alt="">
+                  </label>
                 </div>
-                <div style="width: 20%;">
-                  <button class="btn-send-message" type="submit"><img src="./assets/images/send-message.svg" alt=""></button>
+              </form>
+              <form action="" id="message-form-id" style="flex: 1;" >
+                <div style="display: flex;">
+                  <div style="width: 75%;">
+                    <input type="text" name="message" class="message-input" placeholder="Send a message to everyone">
+                  </div>
+                  <div style="width: 25%;float: right;">
+                    <button class="btn-send-message" type="submit"><img src="./assets/images/send-message.svg"
+                        alt=""></button>
+                  </div>
                 </div>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
 
         <div class="body-interaction-content body-interaction-activity">
           <ul class="interaction-activity-list">
             <li class="interaction-activity-item">
-              <img src="https://www.gstatic.com/meet/google-meet-icons_whiteboard-icon_44ebb90da0e177ad2a47be47dccc81ae.svg" alt="">
+              <img
+                src="https://www.gstatic.com/meet/google-meet-icons_whiteboard-icon_44ebb90da0e177ad2a47be47dccc81ae.svg"
+                alt="">
               <div class="interaction-activity-item-info">
                 <span>Whiteboarding</span>
                 <span>Collaboratively brainstorm and sketch ideas</span>
@@ -213,31 +207,37 @@
             </li>
           </ul>
         </div>
-        
+
       </div>
     </div>
 
     <div class="app-footer">
-      <div class="room-info">
-          <b>7:35 PM</b>  |  <b>Phòng họp 19IT1</b>
+      <div class="room-info d-flex align-items-center">
+        <div>
+          <img class="image-logo-web" src="./assets/images/logoweb.png" alt="">
+        </div>
+        <div>
+          <!-- <div class="name-web-room">Phòng chat trực tuyến Demo</div> -->
+          <div class="time-web-room">10:10</div>
+        </div>
       </div>
       <div class="room-control">
-        <div class="room-control-item active" id="micro-control" >
-          <img src="./assets/images/micro-off.svg" alt="micro">
+        <div class="room-control-item" id="micro-control">
+          <img src="./assets/images/micro.svg" alt="micro">
           <div class="room-control-item-label">
-            <span>Turn on micro (Ctrl + D)</span>
+            <span>Turn off micro (Ctrl + D)</span>
           </div>
         </div>
-        <div class="room-control-item" id="camera-control" >
+        <div class="room-control-item" id="camera-control">
           <img src="./assets/images/camera.svg" alt="camera">
           <div class="room-control-item-label">
             <span>Turn on camera (Ctrl + E)</span>
           </div>
         </div>
-        <div class="room-control-item">
-          <i class="far fa-closed-captioning"></i>
+        <div class="room-control-item room-control-end-call active">
+          <img src="./assets/images/end-call.svg">
           <div class="room-control-item-label">
-            <span>Turn on captions</span>
+            <span>Leave call</span>
           </div>
         </div>
         <div class="room-control-item">
@@ -319,11 +319,11 @@
               <li class="sub-menu-item">
                 <img src="./assets/images/troubleshooting.svg" alt="present">
                 <div class="sub-menu-item-text">
-                  Troubleshooting & help 
+                  Troubleshooting & help
                 </div>
               </li>
               <li class="sub-menu-item">
-                <i class="fas fa-cog"></i>                
+                <i class="fas fa-cog"></i>
                 <div class="sub-menu-item-text">
                   Settings
                 </div>
@@ -331,12 +331,7 @@
             </ul>
           </div>
         </div>
-        <div class="room-control-item room-control-end-call active">
-          <img src="./assets/images/end-call.svg">
-          <div class="room-control-item-label">
-            <span>Leave call</span>
-          </div>
-        </div>
+
       </div>
       <div class="room-interact-control">
         <div class="room-interact-control-item">
@@ -355,8 +350,15 @@
     </div>
   </div>
   <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
-  <script src="https://cdn.socket.io/4.3.2/socket.io.min.js" integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs" crossorigin="anonymous"></script>  <script src="./assets/js/main.js"></script>
+  <script src="https://cdn.socket.io/4.3.2/socket.io.min.js"
+    integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs"
+    crossorigin="anonymous"></script>
+  <script src="./assets/js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
+    integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./assets/js/screen.js"></script>
   <script src="./assets/js/socket.js"></script>
 </body>
+
 </html>

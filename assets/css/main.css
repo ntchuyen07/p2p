@@ -5,7 +5,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #202124;
+  background: #F3F4F7;
   font-family: 'Open Sans', sans-serif;
   overflow: hidden;
 }
@@ -64,33 +64,33 @@ body {
 }
 #remote-video {
   position: fixed;
-  top: 0%;
+  top: 3%;
   right: 0;
-  height: 88vh;
-  left: 0%;
-  width: 100vw !important;
+  height: 86vh;
+  left: 2%;
+  width: 73vw !important;
   object-fit: fill;
   border-radius: 10px !important;
 }
 .body-user-remote {
   width: 73vw !important;
-  height: 88vh;
-  background: #3c4043;
-  border-radius: 10px;
-  margin: 6px;
-  margin-right: 51px !important;
+    height: 86vh;
+    background: #3c4043;
+    border-radius: 10px;
+    margin: 6px;
+    margin-top: 7px;
+    margin-right: 42px !important;
 }
 #screen-video {
-  position: absolute;
-  top: 0%;
+  /* position: absolute; */
+  position: fixed;
+  top: 3%;
   right: 0;
-  left: 0%;
-  height: 88vh;
+  height: 86vh;
+  left: 2%;
   width: 73vw !important;
   object-fit: fill;
   border-radius: 10px !important;
-  margin-top: 21px;
-  margin-left: 21px;
 }
 #screen-video-block {
   display: none;
@@ -231,7 +231,7 @@ body {
 
 .body-interaction {
   background: #FFFFFF;
-  width: 360px;
+  width: 460px;
   height: 100%;
   margin-top: 6px;
   border-radius: 8px;
@@ -284,6 +284,15 @@ body {
 .body-interaction-close-btn i {
   font-size: 20px;
   color: #5f6368;
+}
+
+.body-interaction-chatting {
+  height: calc(100% - 64px - 61px);
+  overflow-y: scroll;
+}
+
+.body-interaction-chatting::-webkit-scrollbar {
+  display: none;
 }
 
 .interaction-info-label {
@@ -477,6 +486,10 @@ body {
   word-wrap: break-word;
 }
 
+.chatting-message-content img {
+  width: 120px;
+}
+
 .interaction-activity-list {
   list-style: none;
   padding-left: 0;
@@ -535,7 +548,7 @@ body {
 }
 
 .room-info {
-  color: #fff;
+  color: #000000;
   font-size: 14px;
   letter-spacing: 0.25px;
 }
@@ -543,21 +556,23 @@ body {
 .room-control {
   display: flex;
   align-items: center;
+  margin-left: -300px;
 }
 
 .room-control-item {
   position: relative;
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background-color: #3c4043;
+  background-color: #466182;
   cursor: pointer;
   border-radius: 50%;
-  margin: 0 6px;
+  margin: 0 7px;
+  box-shadow: 0 5px 5px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 }
 
 .room-control-item.active {
@@ -586,9 +601,10 @@ body {
 }
 
 .room-control-end-call {
-  width: 54px;
+  width: 64px;
   border-radius: 100px;
 }
+
 
 .sub-menu {
   position: absolute;
@@ -689,12 +705,16 @@ body {
 }
 
 .room-interact-control-item:hover {
-  background: #28292C;
+  background:rgba(53, 75, 96, 0.9);
+}
+.room-interact-control-item i:hover {
+  font-size: 20px;
+  color: #ffffff;
 }
 
 .room-interact-control-item i {
   font-size: 20px;
-  color: #ffffff;
+  color: #466182;
 }
 .interaction-chatting-input {
   position: fixed;
@@ -709,6 +729,7 @@ body {
   outline: none;
   width: 100%;
   height: 40px;
+  font-size: 14px;
 }
 .message-input:focus {
   outline: none;
@@ -718,4 +739,35 @@ body {
   border: none;
   float: right;
   background-color: white;
+}
+
+.image-logo-web {
+  width: 50px;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+.intro-web {
+  margin-top: 10px;
+}
+.name-web-room {
+  font-weight: 500;
+  font-size: 17px;
+  margin-left: 10px;
+}
+.time-web-room {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.interaction-user-avatar {
+  height: 32px !important;
+  width: 32px !important;
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: red;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
 }

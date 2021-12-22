@@ -23,7 +23,7 @@ const controlCameraBtn = document.querySelector('#camera-control');
 // thì muốn chỉnh sửa style của 1 phần tử thì element.style.ten-style = '';
 // ví dụ: controlCameraBtn.style.display = 'none'
 
-if(roomInfo.type == 'create') {
+if (roomInfo.type == 'create') {
     createRoom();
 } else {
     joinRoom();
@@ -40,7 +40,7 @@ function createRoom() {
     peer = new Peer(room_id)
     peer.on('open', (id) => {
         console.log("Peer Connected with ID: ", id)
-       
+
         navigator.mediaDevices.getUserMedia({ video: true, audio: true })
             .then(stream => {
                 local_stream = stream;
@@ -172,37 +172,49 @@ function turnOffCamera() {
     // local_stream.getTracks().forEach(track => track.stop())
 }
 
+
 function turnOnCamera() {
     let localVideo = document.querySelector('#local-video');
-    localVideo.style.display = 'block';    
+    localVideo.style.display = 'block';
     navigator.mediaDevices.getUserMedia({
         audio: true,
         video: true
     })
-    .then(stream => {
-        local_stream = stream;
-        setLocalStream(local_stream);
-        let videoTrack = local_stream.getVideoTracks()[0];
-        if (peer) {
-            let sender = currentPeer.peerConnection.getSenders().find(function (s) {
-                return s.track.kind == videoTrack.kind;
-            })
-            sender.replaceTrack(videoTrack)
-        }
-    })
-    .catch((err) => {
-        console.log(err);
-    });
+        .then(stream => {
+            local_stream = stream;
+            setLocalStream(local_stream);
+            let videoTrack = local_stream.getVideoTracks()[0];
+            if (peer) {
+                let sender = currentPeer.peerConnection.getSenders().find(function (s) {
+                    return s.track.kind == videoTrack.kind;
+                })
+                sender.replaceTrack(videoTrack)
+            }
+        })
+        .catch((err) => {
+            console.log(err);
+        });
 }
 
 // thêm sự kiện cho 1 element
 // ở đây muốn click nên là điền tên sự kiện là click
-controlCameraBtn.addEventListener('click', function() {
+controlCameraBtn.addEventListener('click', function () {
     let video = document.getElementById("local-video");
-    if(isCameraOn) {
+    if (isCameraOn) {
         turnOffCamera();
     } else {
         turnOnCamera();
     }
     isCameraOn = !isCameraOn;
 })
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $('.img-change').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}

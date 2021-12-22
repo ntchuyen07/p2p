@@ -1,4 +1,3 @@
-const microBtn = document.querySelector('#micro-control');
 const cameraBtn = document.querySelector('#camera-control');
 const controlBtn = document.querySelectorAll('.room-control-item');
 const captionBtn = controlBtn[2];
@@ -13,20 +12,9 @@ const bodyInteractionItem = document.querySelectorAll('.body-interaction-content
 
 let isBodyInteractionActive = false;
 
-microBtn.onclick = function() {
-  const imageMicro = this.querySelector('img');
-  if(this.classList.contains('active')) {
-    imageMicro.src = './assets/images/micro.svg'
-    this.classList.remove('active');
-  } else {
-    imageMicro.src = './assets/images/micro-off.svg'
-    this.classList.add('active');
-  }
-}
-
-cameraBtn.onclick = function() {
+cameraBtn.onclick = function () {
   const imageCamera = this.querySelector('img');
-  if(this.classList.contains('active')) {
+  if (this.classList.contains('active')) {
     imageCamera.src = './assets/images/camera.svg'
     this.classList.remove('active');
   } else {
@@ -36,7 +24,7 @@ cameraBtn.onclick = function() {
 }
 
 // Turn on caption button click
-captionBtn.onclick = function() {
+captionBtn.onclick = function () {
   this.querySelector('i').classList.toggle('fas');
   this.classList.toggle('caption-active');
 }
@@ -47,10 +35,10 @@ settingBtn.onclick = showSubMenu.bind(settingBtn);
 function showSubMenu() {
   const subMenus = document.querySelectorAll('.sub-menu');
   subMenus.forEach(menu => {
-    if(menu.parentElement !== this) {
+    if (menu.parentElement !== this) {
       return menu.classList.remove('active');
     }
-  });  
+  });
   this.querySelector('.sub-menu').classList.toggle('active');
 }
 
@@ -61,13 +49,13 @@ function closeBodyInteraction() {
   removeInteractControl();
   bodyInteraction.classList.add('close');
   isBodyInteractionActive = false;
-  setTimeout(function() {
+  setTimeout(function () {
     bodyInteraction.style.display = 'none';
   }, 100)
 }
 
 interactionControlBtn.forEach((interactBtn, index) => {
-  interactBtn.onclick = function() {
+  interactBtn.onclick = function () {
     switch (index) {
       case 0:
         renderInteractionBody('details');
@@ -81,13 +69,13 @@ interactionControlBtn.forEach((interactBtn, index) => {
         break;
       case 3:
         renderInteractionBody('activity');
-        break;  
+        break;
     }
 
     bodyInteractionItem[index].classList.remove('body-interaction-content');
 
-    if(isBodyInteractionActive) {
-      if(this.classList.contains('active')) {
+    if (isBodyInteractionActive) {
+      if (this.classList.contains('active')) {
         closeBodyInteraction();
         removeInteractControl();
       } else {
@@ -109,20 +97,20 @@ function removeInteractControl() {
   interactionControlBtn.forEach(item => item.classList.remove('active'));
 }
 
-searchPeopleInput.onfocus = function() {
+searchPeopleInput.onfocus = function () {
   this.parentElement.classList.add('focus');
 }
 
-searchPeopleInput.addEventListener('focusout', function() {
+searchPeopleInput.addEventListener('focusout', function () {
   this.parentElement.classList.remove('focus');
 })
 
 function renderInteractionBody(type) {
-  switch(type) {
+  switch (type) {
     case 'details': {
       interactionTitle.innerHTML = 'Meeting details';
       hideAllInteractionBody();
-      
+
       break;
     }
     case 'people': {
@@ -131,7 +119,7 @@ function renderInteractionBody(type) {
       break;
     }
     case 'chatting': {
-      interactionTitle.innerHTML = 'In-call messages';
+      interactionTitle.innerHTML = 'Chat';
       hideAllInteractionBody();
       break;
     }
@@ -145,8 +133,11 @@ function renderInteractionBody(type) {
 
 function hideAllInteractionBody() {
   bodyInteractionItem.forEach(item => {
-    if(!item.classList.contains('body-interaction-content')) {
+    if (!item.classList.contains('body-interaction-content')) {
       item.classList.add('body-interaction-content');
     }
   })
 }
+
+const time = (new Date()).toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+document.querySelector('.time-web-room').textContent = time;
