@@ -1,6 +1,6 @@
-// const host = 'https://ntchuyen07.github.io/p2p';
+const host = 'https://ntchuyen07.github.io/p2p';
 // const host = 'http://127.0.0.1:5500/ScreenSharing';
-const host = 'file:///F:/Javascript/FinalNP/ScreenSharing/';
+// const host = 'file:///F:/Javascript/FinalNP/ScreenSharing/';
 const createRoomForm = document.querySelector('#create-room-form');
 const joinRoomForm = document.querySelector('#join-room-form');
 
